@@ -16,7 +16,7 @@
 
     #quizPage,
     #resultPage {
-      max-width: 400px;
+      max-width: 500px;
       margin: auto;
       display: none;
     }
@@ -49,8 +49,8 @@
   <div id="quizPage">
     <p id="questionNum"></p>
     <p id="questionText"></p>
-    <button class="button" onclick="selectAnswer('1')">답변 1</button>
-    <button class="button" onclick="selectAnswer('0')">답변 2</button>
+    <button class="button" id="btnA" onclick="selectAnswer('1')"></button>
+    <button class="button" id="btnB" onclick="selectAnswer('0')"></button>
   </div>
 
   <div id="resultPage">
@@ -62,13 +62,41 @@
 
   <script>
     const questions = [
-      "나는 우리 동아리가...",
-      "협업보다는 혼자 하는 게 편하다",
-      "계획보다는 즉흥이 좋다",
-      "결과보다 과정이 중요하다",
-      "사람 만나는 게 좋다",
-      "디자인에 관심이 많다",
-      "문제 해결에 집착한다"
+      {
+        text: "주말에 시간이 생겼을 때 나는...",
+        A: "친구들이랑 어울리면서 새로운 걸 해보고 싶어!",
+        B: "혼자 좋아하는 거 하면서 에너지 충전하고 싶어!"
+      },
+      {
+        text: "나는 동아리 활동을 통해…",
+        A: "진로나 실력 향상에 도움이 되었으면 좋겠어!",
+        B: "그냥 재밌고 스트레스 풀리는 활동이면 좋겠어!"
+      },
+      {
+        text: "나는 우리 동아리가…",
+        A: "열정 넘치고 체계적으로 돌아가는 분위기였으면 좋겠어!",
+        B: "자유롭고 부담 없는 분위기였으면 좋겠어!"
+      },
+      {
+        text: "내가 더 끌리는 활동은?",
+        A: "함께 협력해서 만들어가는 활동!",
+        B: "대화를 나누고 서로 공감하는 활동!"
+      },
+      {
+        text: "나는 동아리 활동을…",
+        A: "학교에서 벗어나 활동을 하고 싶어!",
+        B: "학교 안에서 아늑하게 활동하고 싶어!"
+      },
+      {
+        text: "나는…",
+        A: "직접 몸으로 체험하는 활동이 좋아!",
+        B: "깊이 생각하고 토론하는 활동이 좋아!"
+      },
+      {
+        text: "동아리 어떤 분위기가 좋아?",
+        A: "목표를 세우고 도전하는 게 좋아!",
+        B: "부담 없이 느긋하게 즐기는 게 좋아!"
+      }
     ];
 
     let answerCode = "";
@@ -81,8 +109,11 @@
     }
 
     function renderQuestion() {
+      const q = questions[currentQuestion];
       document.getElementById("questionNum").innerText = `${currentQuestion + 1} / ${questions.length}`;
-      document.getElementById("questionText").innerText = questions[currentQuestion];
+      document.getElementById("questionText").innerText = q.text;
+      document.getElementById("btnA").innerText = q.A;
+      document.getElementById("btnB").innerText = q.B;
     }
 
     function selectAnswer(value) {
@@ -98,12 +129,9 @@
 
     function showResult() {
       console.log("최종 코드:", answerCode);
-      // 결과 페이지로 이동하면서 코드 전달
       window.location.href = `result.html?code=${answerCode}`;
     }
-
   </script>
-
 </body>
 
 </html>
