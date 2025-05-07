@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>느좋동 테스트</title>
+  <style>
+    body {
+      font-family: 'NeoDunggeunmo', sans-serif;
+      background: #fefefe;
+      color: #333;
+      text-align: center;
+      padding: 20px;
+    }
+
+    #quizPage,
+    #resultPage {
+      max-width: 400px;
+      margin: auto;
+      display: none;
+    }
+
+    .button {
+      display: block;
+      margin: 10px auto;
+      padding: 10px 20px;
+      background: #f58220;
+      color: white;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background: #d96d0c;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="mainPage">
+    <h1>느 좋은 동아리</h1>
+    <p>나는 어떤 동아리랑 맞을까?</p>
+    <button class="button" onclick="startQuiz()">시작하기</button>
+  </div>
+
+  <div id="quizPage">
+    <p id="questionNum"></p>
+    <p id="questionText"></p>
+    <button class="button" onclick="selectAnswer('1')">답변 1</button>
+    <button class="button" onclick="selectAnswer('0')">답변 2</button>
+  </div>
+
+  <div id="resultPage">
+    <h2>나의 느좋 동아리는?</h2>
+    <h3 id="resultTitle"></h3>
+    <p id="resultDesc"></p>
+    <button class="button" onclick="location.reload()">다시하기</button>
+  </div>
+
+  <script>
+    const questions = [
+      "나는 우리 동아리가...",
+      "협업보다는 혼자 하는 게 편하다",
+      "계획보다는 즉흥이 좋다",
+      "결과보다 과정이 중요하다",
+      "사람 만나는 게 좋다",
+      "디자인에 관심이 많다",
+      "문제 해결에 집착한다"
+    ];
+
+    const resultMap = {
+      "1111111": { name: "개발동아리", description: "열정적으로 몰입하는 당신은 개발형 인간!" },
+      "0000000": { name: "독서토론동아리", description: "혼자 사색을 즐기며 깊이 생각하는 타입이에요." },
+      // ... 필요한 만큼 추가
+    };
+
+    let answerCode = "";
+    let currentQuestion = 0;
+
+    function startQuiz() {
+      document.getElementById("mainPage").style.display = "none";
+      document.getElementById("quizPage").style.display = "block";
+      renderQuestion();
+    }
+
+    function renderQuestion() {
+      document.getElementById("questionNum").innerText = `${currentQuestion + 1} / ${questions.length}`;
+      document.getElementById("questionText").innerText = questions[currentQuestion];
+    }
+
+    function selectAnswer(value) {
+      answerCode += value;
+      console.log(answerCode);
+      currentQuestion++;
+      if (currentQuestion < questions.length) {
+        renderQuestion();
+      } else {
+        showResult();
+      }
+    }
+
+    function showResult() {
+      console.log("최종 코드:", answerCode);
+      // 결과 페이지로 이동하면서 코드 전달
+      window.location.href = `result.html?code=${answerCode}`;
+    }
+
+  </script>
+
+</body>
+
+</html>
