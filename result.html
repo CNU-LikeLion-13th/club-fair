@@ -5,8 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>추천 동아리 결과</title>
     <style>
+      @font-face {
+        font-family: "NeoDunggeunmoPro";
+        src: url("./fonts/NeoDunggeunmoPro-Regular.ttf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
+      }
       body {
-        font-family: "NeoDunggeunmo", sans-serif;
+        font-family: "NeoDunggeunmoPro", sans-serif;
         background: #000;
         padding: 30px;
         text-align: center;
@@ -15,47 +21,95 @@
         align-items: center;
         flex-direction: column;
       }
-      h1 {
-        color: #f58220;
-      }
-      ul {
-        list-style: none;
-        padding: 0;
-      }
-      li {
-        background: #f1f1f1;
-        margin: 10px auto;
-        padding: 15px;
-        font-size: 18px;
-        border: 2px solid #f58220;
+
+      .club-name-box {
+        font-family: "NeoDunggeunmoPro", sans-serif;
+        padding: 20px;
+        margin: 20px 0 10px;
         width: 300px;
+        font-size: 28px;
+        color: #ff7710;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .club-name-box .insta-icon img {
+        width: 50px;
+        height: 50px;
+        vertical-align: middle;
+      }
+
+      .club-desc-box {
+        font-family: "NeoDunggeunmoPro", sans-serif;
+        border: 2px solid #ff7710;
+        padding: 20px;
+        width: 300px;
+        font-size: 14px;
+        color: white;
+        text-align: left;
+        white-space: pre-wrap;
+        line-height: 1.5;
+        margin-bottom: 10px;
+        border-radius: 10px;
+      }
+
+      .insta-link {
+        color: #f58220;
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+
+      .insta-link a {
+        color: #f58220;
+        text-decoration: underline;
       }
     </style>
   </head>
   <body>
-    <img src="result.svg" />
-
-    <img />
-    <ul id="clubList"></ul>
+    <img src="result.svg" alt="나의 느좋 동아리는?" />
+    <div id="clubResult"></div>
 
     <script src="clubData.js"></script>
     <script src="club.js"></script>
     <script>
-      // 1. URL에서 7자리 코드 추출
       const params = new URLSearchParams(window.location.search);
       const code = params.get("code");
-
-      // 2. JS 함수로 추천 동아리 구하기
       const recommendations = recommendClubsJS(code);
 
-      // 3. 화면에 출력
-      const ul = document.getElementById("clubList");
+      const container = document.getElementById("clubResult");
+
       recommendations.forEach((clubName) => {
-        const club = clubData.find((item) => item.동아리명 === clubName);
+        const club = clubData.find(
+          (item) => item.동아리명.trim() === clubName.trim()
+        );
         if (club) {
-          const li = document.createElement("li");
-          li.innerHTML = `<strong>${club.동아리명}</strong><br><span>${club.소개글}</span>`;
-          ul.appendChild(li);
+          const nameBox = document.createElement("div");
+          nameBox.className = "club-name-box";
+          nameBox.innerHTML = `
+            <span>${club.동아리명}</span>
+            ${
+              club.인스타그램 && club.인스타그램.trim() !== ""
+                ? `<a href="${club.인스타그램}" target="_blank" class="insta-icon">
+                  <img src="instagram.png" alt="Instagram" />
+                </a>`
+                : ""
+            }
+          `;
+
+          const descBox = document.createElement("div");
+          descBox.className = "club-desc-box";
+          descBox.textContent = club.소개글;
+
+          container.appendChild(nameBox);
+          container.appendChild(descBox);
+
+          if (club.인스타그램 && club.인스타그램.trim() !== "") {
+            const insta = document.createElement("div");
+            insta.className = "insta-link";
+            container.appendChild(insta);
+          }
         }
       });
     </script>
