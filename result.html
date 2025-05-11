@@ -1,56 +1,63 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>추천 동아리 결과</title>
-  <style>
-    body {
-      font-family: 'NeoDunggeunmo', sans-serif;
-      background: #fffef8;
-      padding: 30px;
-      text-align: center;
-    }
-    h1 {
-      color: #f58220;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    li {
-      background: #f1f1f1;
-      margin: 10px auto;
-      padding: 15px;
-      font-size: 18px;
-      border: 2px solid #f58220;
-      width: 300px;
-    }
-  </style>
-</head>
-<body>
-  <h1>나에게 어울리는 동아리는?</h1>
-  <ul id="clubList"></ul>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>추천 동아리 결과</title>
+    <style>
+      body {
+        font-family: "NeoDunggeunmo", sans-serif;
+        background: #000;
+        padding: 30px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      h1 {
+        color: #f58220;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      li {
+        background: #f1f1f1;
+        margin: 10px auto;
+        padding: 15px;
+        font-size: 18px;
+        border: 2px solid #f58220;
+        width: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="result.svg" />
 
-  <script src="clubData.js"></script>
-  <script src="club.js"></script>
-  <script>
-    // 1. URL에서 7자리 코드 추출
-    const params = new URLSearchParams(window.location.search);
-    const code = params.get("code");
-  
-    // 2. JS 함수로 추천 동아리 구하기
-    const recommendations = recommendClubsJS(code);
-  
-    // 3. 화면에 출력
-    const ul = document.getElementById("clubList");
-    recommendations.forEach(club => {
-      const li = document.createElement("li");
-      li.textContent = club;
-      ul.appendChild(li);
-    });
-  </script>
-  
-  
-</body>
+    <img />
+    <ul id="clubList"></ul>
+
+    <script src="clubData.js"></script>
+    <script src="club.js"></script>
+    <script>
+      // 1. URL에서 7자리 코드 추출
+      const params = new URLSearchParams(window.location.search);
+      const code = params.get("code");
+
+      // 2. JS 함수로 추천 동아리 구하기
+      const recommendations = recommendClubsJS(code);
+
+      // 3. 화면에 출력
+      const ul = document.getElementById("clubList");
+      recommendations.forEach((clubName) => {
+        const club = clubData.find((item) => item.동아리명 === clubName);
+        if (club) {
+          const li = document.createElement("li");
+          li.innerHTML = `<strong>${club.동아리명}</strong><br><span>${club.소개글}</span>`;
+          ul.appendChild(li);
+        }
+      });
+    </script>
+  </body>
 </html>
