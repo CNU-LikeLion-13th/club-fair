@@ -4,20 +4,79 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>느좋동 테스트</title>
+  <title>느좋 동아리 테스트</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     @font-face {
-  font-family: 'NeoDunggeunmoPro';
-  src: url('./fonts/NeoDunggeunmoPro-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
+      font-family: 'NeoDunggeunmoPro';
+      src: url('./fonts/NeoDunggeunmoPro-Regular.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
     body {
       font-family: 'NeoDunggeunmoPro', sans-serif;
       background: #fefefe;
       color: #333;
       text-align: center;
       padding: 20px;
+    }
+
+    /*상단 메뉴 부분*/
+    .navbar {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background: white;
+    }
+
+    .navbar__logo img {
+      vertical-align: middle;
+    }
+
+    .navbar__menu {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    .navbar__toggleBtn {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 24px;
+      background: none;
+      border: none;
+      color: #333;
+      cursor: pointer;
+      display: none;
+    }
+
+    /* 모바일에서는 메뉴 숨김 + 세로 정렬 */
+    @media (max-width: 768px) {
+      .navbar__toggleBtn {
+        display: block;
+      }
+
+      .navbar__menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: white;
+        width: 100%;
+        padding: 10px 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+      }
+
+      .navbar__menu.active {
+        display: flex;
+      }
     }
 
     #quizPage,
@@ -45,6 +104,15 @@
 </head>
 
 <body>
+  <nav class="navbar">
+    <button class="navbar__toggleBtn">
+      <i class="fas fa-bars"></i>
+    </button>
+    <ul class="navbar__menu">
+      <li><a class="navbarFont" href="./about.html">멋쟁이사자처럼 소개</a></li>
+      <li><a class="navbarFont" href="/">느좋 동아리 테스트</a></li>
+    </ul>
+  </nav>
 
   <div id="mainPage">
     <h1>느 좋은 동아리</h1>
@@ -124,7 +192,6 @@
 
     function selectAnswer(value) {
       answerCode += value;
-      console.log(answerCode);
       currentQuestion++;
       if (currentQuestion < questions.length) {
         renderQuestion();
@@ -134,9 +201,16 @@
     }
 
     function showResult() {
-      console.log("최종 코드:", answerCode);
       window.location.href = `result.html?code=${answerCode}`;
     }
+
+    // navbar 부분
+    const toggleBtn = document.querySelector('.navbar__toggleBtn');
+    const menu = document.querySelector('.navbar__menu');
+
+    toggleBtn.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
   </script>
 </body>
 
