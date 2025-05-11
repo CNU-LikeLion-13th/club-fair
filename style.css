@@ -1,0 +1,123 @@
+@font-face {
+  font-family: "NeoDunggeunmoPro";
+  src: url("./fonts/NeoDunggeunmoPro-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "NeoDunggeunmoPro", sans-serif;
+  background: #000000;
+  color: #ffffff;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+}
+
+#mainPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* justify-content: space-around; */
+  align-items: center;
+  min-height: 90vh;
+}
+
+.responsive-box {
+  width: 100%;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+img {
+  display: block;
+  margin: 40px auto 20px;
+}
+
+.questionBox {
+  border: 2px solid white;
+  padding: 20px 0px;
+  margin: 30px auto;
+  border-radius: 5px;
+  color: white;
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+#quizPage,
+#resultPage {
+  max-width: 500px;
+  margin: auto;
+  display: none;
+}
+
+.startButton {
+  width: 100%;
+  max-width: 309px;
+  margin: 20px auto;
+  padding: 40px 0px;
+  background: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 12px;
+  font-size: 30px;
+  font-family: "NeoDunggeunmoPro", sans-serif;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  transition: background 0.2s;
+  box-sizing: border-box;
+}
+
+.button {
+  width: 100%;
+  max-width: 309px;
+  margin: 20px auto;
+  padding: 40px 10px;
+  box-sizing: border-box;
+  background: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 12px;
+  font-size: 24px;
+  font-family: "NeoDunggeunmoPro", sans-serif;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  transition: background 0.2s;
+  height: 150px;
+}
+
+.button:hover {
+  background: #e6e6e6;
+}
+
+.questionCard {
+  border: 2px solid #ff7710;
+  padding: 20px 0px;
+  margin: 20px auto 100px auto;
+  border-radius: 8px;
+  max-width: 309px;
+  text-align: center;
+  height: 70px;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.questionCard p {
+  font-size: 22px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+#questionNum {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
