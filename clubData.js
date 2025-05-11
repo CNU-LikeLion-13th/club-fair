@@ -56,7 +56,7 @@ const clubData = [
     소개글: `곤충과 생물에 관심 있는 누구나 환영`,
     인스타그램:
       "https://www.instagram.com/ces.insects?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D",
-    차차: "탐구동아리",
+    차차: "관찰동아리",
   },
   {
     코드: "1001001",
@@ -223,7 +223,7 @@ const clubData = [
 흥미는 있는데 관련 경험이 없다고 걱정 NO!
 이색적이고 재미가 가득한 동아리 활동들이 가득합니다!`,
     인스타그램: "https://www.instagram.com/cnu_hasaengyeon/",
-    차차: "탐구동아리",
+    차차: "관찰동아리",
   },
   {
     코드: "1011111",
