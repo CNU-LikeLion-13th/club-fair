@@ -707,7 +707,7 @@ SEOLLEIM(설레임) + Billiards(당구)
 저희 동아리는 골프 입문자부터 숙련자까지 다양하게 분포해 있으며,
 매주 연습 모임과 스크린 모임을 통해 동아리 부원끼리의 친목과 실력을 향상하고 있습니다.
 또한 자체 레슨 프로그램과 테스트 항목이 있어서 새로운 스포츠 종목 도전을 좋아하고
-성취를 하고자 하시는 분들도 환영입니다. 많은 관심과 가입문의 부탁 드리겠습니다. 인스타그램 : @cnu_wecanbirdie`,
+성취를 하고자 하시는 분들도 환영입니다. 많은 관심과 가입문의 부탁 드리겠습니다.`,
     인스타그램:
       "https://www.instagram.com/cnu_wecanbirdie?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D",
     차차: "포켓동아리",
@@ -721,7 +721,7 @@ SEOLLEIM(설레임) + Billiards(당구)
 충남대학교 검도동아리 충검회입니다.
 처음 하시는 분들도 임원진이 친절히 가르쳐드립니다!
 모든 장비도 구비되어있으니 걱정말고 와서 즐기시면 됩니다!
-검도를 시작하고 싶다면 저희 동아리로 오세요! 인스타그램 : @cnu_kendo_official`,
+검도를 시작하고 싶다면 저희 동아리로 오세요!`,
     인스타그램:
       "https://www.instagram.com/cnu_kendo_official?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D",
     차차: "도복동아리",
@@ -733,7 +733,7 @@ SEOLLEIM(설레임) + Billiards(당구)
     소개글: `"충남대학교 최대 규모의 한국인-외국인 네트워크 형성 동아리"
 Hi guys! We are AFKN, the largest CNU social club for international and Korean students. If you are looking to interact with people all over the world, we are the one. We are planning to have inner-city trips, parties, sports game and more!!
 
-AFKN은 충남대 최대의 외국인 교류 동아리입니다. 외국 친구들과 함께 영어도 배우며 회화도 늘고 추억도 쌓고 좋은 기억 만들어가며 즐거운 대학생활 보내요!!인스타그램 : @cnu_afkn`,
+AFKN은 충남대 최대의 외국인 교류 동아리입니다. 외국 친구들과 함께 영어도 배우며 회화도 늘고 추억도 쌓고 좋은 기억 만들어가며 즐거운 대학생활 보내요!!`,
     인스타그램: "https://www.instagram.com/cnu_afkn",
     차차: "어학동아리",
   },
@@ -754,7 +754,7 @@ AFKN은 충남대 최대의 외국인 교류 동아리입니다. 외국 친구�
     동아리명: "DIALOG",
     소개글: `
 "영어를 못해도 넌 할수 있어, 입이 트이게 하는 동아리 여기는 다이얼로그입니다~"
-안녕하세요! 50년 전통의 영어회화 정규동아리 다이얼로그입니다!  영어를 좋아하시는 분들, 관심있으신 분들, 배우고자 하시는 분들 모두 환영합니다 :) 인스타그램 : @dia_log1971`,
+안녕하세요! 50년 전통의 영어회화 정규동아리 다이얼로그입니다!  영어를 좋아하시는 분들, 관심있으신 분들, 배우고자 하시는 분들 모두 환영합니다 :)`,
     인스타그램: "https://www.instagram.com/dia_log1971",
     차차: "어학동아리",
   },
@@ -762,8 +762,8 @@ AFKN은 충남대 최대의 외국인 교류 동아리입니다. 외국 친구�
     코드: "110X010",
     그룹: "그룹 AK",
     동아리명: "하이볼",
-    소개글: `정보없음, 🏐하이볼🏐
-충남대 배구 동아리 인스타그램: @highball_cnu`,
+    소개글: `🏐하이볼🏐
+충남대 배구 동아리`,
     인스타그램: "https://www.instagram.com/highball_cnu/",
     차차: "배구동아리",
   },

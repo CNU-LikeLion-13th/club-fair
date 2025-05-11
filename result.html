@@ -25,7 +25,7 @@
       .club-name-box {
         font-family: "NeoDunggeunmoPro", sans-serif;
         padding: 20px;
-        margin: 20px 0 10px;
+        margin: 0px;
         width: 300px;
         font-size: 30px;
         color: #ff7710;
@@ -64,6 +64,10 @@
       .titleImg {
         padding: 30px;
       }
+      .chaImg {
+        background-color: #ffffff;
+        border-radius: 50px;
+      }
     </style>
   </head>
   <body>
@@ -91,6 +95,12 @@
         if (club) {
           const nameBox = document.createElement("div");
           nameBox.className = "club-name-box";
+
+          const imageBox = document.createElement("div");
+          imageBox.className = "club-image-box";
+          imageBox.innerHTML = `
+              <div class="chaImg"><img src="assets/${club.차차}차차.png" alt="${club.차차}" style="width: 200px; margin-bottom: 15px;" /></div>
+            `;
           nameBox.innerHTML = `
             <span>${club.동아리명}</span>
             ${
@@ -106,6 +116,7 @@
           descBox.className = "club-desc-box";
           descBox.textContent = club.소개글;
 
+          container.appendChild(imageBox);
           container.appendChild(nameBox);
           container.appendChild(descBox);
 
