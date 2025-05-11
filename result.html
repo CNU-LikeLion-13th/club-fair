@@ -1,242 +1,248 @@
 <!DOCTYPE html>
 <html lang="ko">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>추천 동아리 결과</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    @font-face {
-      font-family: "NeoDunggeunmoPro";
-      src: url("./fonts/NeoDunggeunmoPro-Regular.ttf") format("truetype");
-      font-weight: normal;
-      font-style: normal;
-    }
-
-    body {
-      font-family: "NeoDunggeunmoPro", sans-serif;
-      background: #000;
-      text-align: center;
-      padding: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-    }
-
-    .club-name-box {
-      font-family: "NeoDunggeunmoPro", sans-serif;
-      padding: 20px;
-      margin: 0px;
-      width: 300px;
-      font-size: 30px;
-      color: #ff7710;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .club-name-box .insta-icon img {
-      width: 50px;
-      height: 50px;
-      vertical-align: middle;
-    }
-
-    .club-desc-box {
-      font-family: "NeoDunggeunmoPro", sans-serif;
-      border: 2px solid #ff7710;
-      padding: 20px;
-      width: 300px;
-      font-size: 14px;
-      color: white;
-      text-align: left;
-      white-space: pre-wrap;
-      line-height: 1.5;
-      margin-bottom: 10px;
-      border-radius: 10px;
-    }
-
-    .text {
-      font-size: 12px;
-      color: #aaa;
-      text-align: center;
-    }
-
-    .text2 {
-      font-size: 15px;
-      color: #ffffff;
-      margin: 20px auto 10px auto;
-      text-align: center;
-    }
-
-    .titleImg {
-      padding: 30px;
-    }
-
-    .chaImg {
-      background-color: #ffffff;
-      border-radius: 50px;
-    }
-
-    .navbar {
-      width: 100%;
-    }
-
-    .navbar__container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 12px 20px;
-      position: relative;
-    }
-
-    .navbar__toggleBtn {
-      font-size: 24px;
-      background: none;
-      border: none;
-      color: white;
-      cursor: pointer;
-      display: none;
-      position: absolute;
-      right: 20px;
-      top: 12px;
-    }
-
-    .navbar__menu {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      margin: 0;
-      list-style: none;
-      margin-top: 20px;
-    }
-
-    .navbar__menu li a {
-      color: white;
-      margin-right: 20px;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .navbar__menu li a:hover {
-      color: #ff7710;
-    }
-
-    @media (max-width: 768px) {
-      .navbar__toggleBtn {
-        display: block;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>추천 동아리 결과</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      @font-face {
+        font-family: "NeoDunggeunmoPro";
+        src: url("./fonts/NeoDunggeunmoPro-Regular.ttf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
       }
 
-      .navbar__menu {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        padding: 10px 0;
-        border-top: 1px solid #ddd;
-        margin-top: 20px;
-      }
-
-      .navbar__menu.active {
+      body {
+        font-family: "NeoDunggeunmoPro", sans-serif;
+        background: #000;
+        text-align: center;
         display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
       }
 
-      .navbar__menu li {
-        padding: 3px;
+      .club-name-box {
+        font-family: "NeoDunggeunmoPro", sans-serif;
+        padding: 20px;
+        margin: 0px;
+        width: 300px;
+        font-size: 30px;
+        color: #ff7710;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        
+      }
+
+      .club-name-box .insta-icon img {
+        width: 50px;
+        height: 50px;
+        vertical-align: middle;
+      }
+
+      .club-desc-box {
+        font-family: "NeoDunggeunmoPro", sans-serif;
+        border: 2px solid #ff7710;
+        padding: 20px;
+        width: 300px;
+        font-size: 14px;
+        color: white;
+        text-align: left;
+        white-space: pre-wrap;
+        line-height: 1.5;
+        margin-bottom: 10px;
+        border-radius: 10px;
+      }
+
+      .text {
+        font-size: 12px;
+        color: #aaa;
         text-align: center;
       }
 
+      .text2 {
+        font-size: 15px;
+        color: #ffffff;
+        margin: 20px auto 10px auto;
+        text-align: center;
+      }
+
+      .titleImg {
+        padding: 30px;
+      }
+
+      .chaImg {
+        background-color: #ffffff;
+        border-radius: 50px;
+      }
+
+      .navbar {
+        width: 100%;
+      }
+
+      .navbar__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 20px;
+        position: relative;
+      }
+
+      .navbar__toggleBtn {
+        font-size: 24px;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+        display: none;
+        position: absolute;
+        right: 20px;
+        top: 12px;
+      }
+
+      .navbar__menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: 0;
+        list-style: none;
+        margin-top: 20px;
+      }
+
       .navbar__menu li a {
-        color: #fff;
-        display: block;
-        padding: 10px;
-        border-radius: 4px;
+        color: white;
+        margin-right: 20px;
+        text-decoration: none;
+        font-weight: 600;
       }
 
       .navbar__menu li a:hover {
         color: #ff7710;
       }
-    }
-  </style>
-</head>
 
-<body>
-  <nav class="navbar">
-    <div class="navbar__container">
-      <button class="navbar__toggleBtn">
-        <i class="fas fa-bars"></i>
-      </button>
-    </div>
-    <ul class="navbar__menu">
-      <li><a class="navbarFont" href="./about.html">멋쟁이사자처럼 소개</a></li>
-      <li><a class="navbarFont" href="./index.html">느좋 동아리 테스트</a></li>
-    </ul>
-  </nav>
-  <img src="assets/result.svg" alt="나의 느좋 동아리는?" class="titleImg" />
-  <div id="clubResult"></div>
+      @media (max-width: 768px) {
+        .navbar__toggleBtn {
+          display: block;
+        }
 
-  <p class="text2">새로고침을 하면 새로운 동아리가 나올지도~?</p>
-  <p class="text">
-    이 결과는 개발자의 개인적인 판단이 일부 포함되어 있으며,<br />실제와 다를
-    수 있습니다. 참고용으로 활용해 주세요.
-  </p>
+        .navbar__menu {
+          display: none;
+          flex-direction: column;
+          width: 100%;
+          padding: 10px 0;
+          border-top: 1px solid #ddd;
+          margin-top: 20px;
+        }
 
-  <script src="clubData.js"></script>
-  <script src="club.js"></script>
-  <script>
-    const toggleBtn = document.querySelector('.navbar__toggleBtn');
-    const menu = document.querySelector('.navbar__menu');
+        .navbar__menu.active {
+          display: flex;
+        }
 
-    toggleBtn.addEventListener('click', () => {
-      menu.classList.toggle('active');
-    });
+        .navbar__menu li {
+          padding: 3px;
+          text-align: center;
+        }
 
-    const params = new URLSearchParams(window.location.search);
-    const code = params.get("code");
-    const recommendations = recommendClubsJS(code);
+        .navbar__menu li a {
+          color: #fff;
+          display: block;
+          padding: 10px;
+          border-radius: 4px;
+        }
 
-    const container = document.getElementById("clubResult");
-
-    recommendations.forEach((clubName) => {
-      const club = clubData.find(
-        (item) => item.동아리명.trim() === clubName.trim()
-      );
-      if (club) {
-        const nameBox = document.createElement("div");
-        nameBox.className = "club-name-box";
-
-        const imageBox = document.createElement("div");
-        imageBox.className = "club-image-box";
-        imageBox.innerHTML = `
-              <div class="chaImg"><img src="assets/${club.차차}차차.png" alt="${club.차차}" style="width: 200px;" /></div>
-            `;
-        nameBox.innerHTML = `
-            <span>${club.동아리명}</span>
-            ${club.인스타그램 && club.인스타그램.trim() !== ""
-            ? `<a href="${club.인스타그램}" target="_blank" class="insta-icon">
-                  <img src="instagram.png" alt="Instagram" />
-                </a>`
-            : ""
-          }
-          `;
-
-        const descBox = document.createElement("div");
-        descBox.className = "club-desc-box";
-        descBox.textContent = club.소개글;
-
-        container.appendChild(imageBox);
-        container.appendChild(nameBox);
-        container.appendChild(descBox);
-
-        if (club.인스타그램 && club.인스타그램.trim() !== "") {
-          const insta = document.createElement("div");
-          insta.className = "insta-link";
-          container.appendChild(insta);
+        .navbar__menu li a:hover {
+          color: #ff7710;
         }
       }
-    });
-  </script>
-</body>
+    </style>
+  </head>
 
+  <body>
+    <nav class="navbar">
+      <div class="navbar__container">
+        <button class="navbar__toggleBtn">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+      <ul class="navbar__menu">
+        <li>
+          <a class="navbarFont" href="./about.html">멋쟁이사자처럼 소개</a>
+        </li>
+        <li>
+          <a class="navbarFont" href="./index.html">느좋 동아리 테스트</a>
+        </li>
+      </ul>
+    </nav>
+    <img src="assets/result.svg" alt="나의 느좋 동아리는?" class="titleImg" />
+    <div id="clubResult"></div>
+
+    <p class="text2">새로고침을 하면 새로운 동아리가 나올지도~?</p>
+    <p class="text">
+      이 결과는 개발자의 개인적인 판단이 일부 포함되어 있으며,<br />실제와 다를
+      수 있습니다. 참고용으로 활용해 주세요.
+    </p>
+
+    <script src="clubData.js"></script>
+    <script src="club.js"></script>
+    <script>
+      const toggleBtn = document.querySelector(".navbar__toggleBtn");
+      const menu = document.querySelector(".navbar__menu");
+
+      toggleBtn.addEventListener("click", () => {
+        menu.classList.toggle("active");
+      });
+
+      const params = new URLSearchParams(window.location.search);
+      const code = params.get("code");
+      const recommendations = recommendClubsJS(code);
+
+      const container = document.getElementById("clubResult");
+
+      recommendations.forEach((clubName) => {
+        const club = clubData.find(
+          (item) => item.동아리명.trim() === clubName.trim()
+        );
+        if (club) {
+          const nameBox = document.createElement("div");
+          nameBox.className = "club-name-box";
+
+          const imageBox = document.createElement("div");
+          imageBox.className = "club-image-box";
+          imageBox.innerHTML = `
+              <div class="chaImg"><img src="assets/${club.차차}차차.png" alt="${club.차차}" style="width: 200px;" /></div>
+            `;
+          nameBox.innerHTML = `
+            <span>${club.동아리명}</span>
+            ${
+              club.인스타그램 && club.인스타그램.trim() !== ""
+                ? `<a href="${club.인스타그램}" target="_blank" class="insta-icon">
+                  <img src="instagram.png" alt="Instagram" />
+                </a>`
+                : ""
+            }
+          `;
+
+          const descBox = document.createElement("div");
+          descBox.className = "club-desc-box";
+          descBox.textContent = club.소개글;
+
+          container.appendChild(imageBox);
+          container.appendChild(nameBox);
+          container.appendChild(descBox);
+
+          if (club.인스타그램 && club.인스타그램.trim() !== "") {
+            const insta = document.createElement("div");
+            insta.className = "insta-link";
+            container.appendChild(insta);
+          }
+        }
+      });
+    </script>
+  </body>
 </html>
