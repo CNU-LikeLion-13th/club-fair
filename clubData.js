@@ -188,7 +188,7 @@ const clubData = [
 3. 막동, 각종 총회, MT, 외부 당구장 방문, 자유로운 술자리 모임 (술&술..) 등 여러가지 재밌는 활동!`,
     인스타그램:
       "https://www.instagram.com/sns_cnu_pocketball?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D",
-    차차: "포켓볼동아리",
+    차차: "포켓동아리",
   },
   {
     코드: "1111111",
