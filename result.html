@@ -30,7 +30,6 @@
 </head>
 <body>
   <h1>나에게 어울리는 동아리는?</h1>
-  <p>잠시만 기다려주세요...</p>
   <ul id="clubList"></ul>
 
   <script src="clubData.js"></script>
@@ -45,7 +44,6 @@
   
     // 3. 화면에 출력
     const ul = document.getElementById("clubList");
-    ul.previousElementSibling.textContent = "추천 동아리 3개:";
     recommendations.forEach(club => {
       const li = document.createElement("li");
       li.textContent = club;

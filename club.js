@@ -5,7 +5,7 @@
     return [...code1].filter((c, i) => c !== code2[i]).length;
   }
   
-  function recommendClubsJS(userCode, max = 3) {
+  function recommendClubsJS(userCode, max = 1) {
     const normalizedCode = userCode.padStart(7, '0');
   
     // 코드 → 그룹, 그룹 → 동아리명 맵 생성

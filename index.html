@@ -1,41 +1,101 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>느좋동 테스트</title>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>느좋 동아리 테스트</title>
     <link rel="stylesheet" href="style.css" />
-  </head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /*상단 메뉴 부분*/
+        .navbar {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background: white;
+        }
 
-  <body>
-    <div id="mainPage">
-      <img src="title.svg" class="responsive-box" />
-      <div class="questionBox responsive-box">
-        <p>나는 어떤<br />동아리랑 맞을까?</p>
-      </div>
-      <button class="startButton responsive-box" onclick="startQuiz()">
-        시작하기
-      </button>
+        .navbar__logo img {
+            vertical-align: middle;
+        }
+
+        .navbar__menu {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .navbar__toggleBtn {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            background: none;
+            border: none;
+            color: #333;
+            cursor: pointer;
+            display: none;
+        }
+
+        /* 모바일에서는 메뉴 숨김 + 세로 정렬 */
+        @media (max-width: 768px) {
+            .navbar__toggleBtn {
+                display: block;
+            }
+
+            .navbar__menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background: white;
+                width: 100%;
+                padding: 10px 0;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                z-index: 999;
+            }
+
+            .navbar__menu.active {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <button class="navbar__toggleBtn">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="navbar__menu">
+            <li><a class="navbarFont" href="./about.html">멋쟁이사자처럼 소개</a></li>
+            <li><a class="navbarFont" href="/">느좋 동아리 테스트</a></li>
+        </ul>
+    </nav>
+    <div id="mainPage"><img src="title.svg" class="responsive-box" />
+        <div class="questionBox responsive-box">
+            <p>나는 어떤<br />동아리랑 맞을까?</p>
+        </div><button class="startButton responsive-box" onclick="startQuiz()">시작하기 </button>
     </div>
-
     <div id="quizPage">
-      <p id="questionNum"></p>
-      <div class="questionCard">
-        <p id="questionText"></p>
-      </div>
-      <button class="button" id="btnA" onclick="selectAnswer('1')"></button>
-      <button class="button" id="btnB" onclick="selectAnswer('0')"></button>
+        <p id="questionNum"></p>
+        <div class="questionCard">
+            <p id="questionText"></p>
+        </div><button class="button" id="btnA" onclick="selectAnswer('1')"></button><button class="button" id="btnB"
+            onclick="selectAnswer('0')"></button>
     </div>
-
     <div id="resultPage">
-      <h2>나의 느좋 동아리는?</h2>
-      <h3 id="resultTitle"></h3>
-      <p id="resultDesc"></p>
-      <button class="button" onclick="location.reload()">다시하기</button>
+        <h2>나의 느좋 동아리는?</h2>
+        <h3 id="resultTitle"></h3>
+        <p id="resultDesc"></p><button class="button" onclick="location.reload()">다시하기</button>
     </div>
-
     <script>
-      const questions = [
+        const questions = [
         {
           text: "주말에 시간이 생겼을 때 나는...",
           A: "친구들이랑 어울리면서 새로운 걸 해보고 싶어!",
@@ -107,6 +167,15 @@
         console.log("최종 코드:", answerCode);
         window.location.href = `result.html?code=${answerCode}`;
       }
+
+        // navbar 부분
+        const toggleBtn = document.querySelector('.navbar__toggleBtn');
+        const menu = document.querySelector('.navbar__menu');
+
+        toggleBtn.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
     </script>
-  </body>
+</body>
+
 </html>
