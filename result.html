@@ -14,8 +14,8 @@
       body {
         font-family: "NeoDunggeunmoPro", sans-serif;
         background: #000;
-        padding: 30px;
         text-align: center;
+        padding: 20px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -27,7 +27,7 @@
         padding: 20px;
         margin: 20px 0 10px;
         width: 300px;
-        font-size: 28px;
+        font-size: 30px;
         color: #ff7710;
         display: flex;
         justify-content: center;
@@ -55,21 +55,25 @@
         border-radius: 10px;
       }
 
-      .insta-link {
-        color: #f58220;
-        font-size: 14px;
-        margin-bottom: 20px;
+      .text {
+        font-size: 12px;
+        color: #aaa;
+        margin-top: 30px;
+        text-align: center;
       }
-
-      .insta-link a {
-        color: #f58220;
-        text-decoration: underline;
+      .titleImg {
+        padding: 30px;
       }
     </style>
   </head>
   <body>
-    <img src="result.svg" alt="나의 느좋 동아리는?" />
+    <img src="result.svg" alt="나의 느좋 동아리는?" class="titleImg" />
     <div id="clubResult"></div>
+
+    <p class="text">
+      이 결과는 개발자의 개인적인 판단이 일부 포함되어 있으며,<br />실제와 다를
+      수있습니다. 참고용으로 활용해 주세요.
+    </p>
 
     <script src="clubData.js"></script>
     <script src="club.js"></script>
