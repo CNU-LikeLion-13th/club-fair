@@ -568,7 +568,7 @@ CNU미담장학회, 아름다운 이야기를 담은 동아리로써, 2024 국�
     소개글: `"중앙 탁구 동아리 ‘동그라미’입니다! "`,
     인스타그램:
       "https://www.instagram.com/dgrm_1979_cnuclub?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D",
-    차차: "포켓볼동아리",
+    차차: "포켓동아리",
   },
   {
     코드: "1111111",
@@ -628,7 +628,7 @@ SEOLLEIM(설레임) + Billiards(당구)
 새내기는  첫 대학생활의 설레임을  
 재학생은 다양한 사람들과 교류의 설레임을 `,
     인스타그램: "x",
-    차차: "포켓동아리",
+    차차: "포켓볼동아리",
   },
   {
     코드: "1101111",
@@ -659,7 +659,7 @@ SEOLLEIM(설레임) + Billiards(당구)
 궁금하신 게 있으시다면 임원진 연락처로 연락주시거나 동방 방을 통해 언제든 문의해주세요. `,
     인스타그램:
       "https://www.instagram.com/cnubc_official/?utm_source=ig_web_button_share_sheet",
-    차차: "포켓동아리",
+    차차: "포켓볼동아리",
   },
   {
     코드: "1111010",
@@ -708,7 +708,7 @@ SEOLLEIM(설레임) + Billiards(당구)
 성취를 하고자 하시는 분들도 환영입니다. 많은 관심과 가입문의 부탁 드리겠습니다.`,
     인스타그램:
       "https://www.instagram.com/cnu_wecanbirdie?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D",
-    차차: "포켓동아리",
+    차차: "포켓볼동아리",
   },
   {
     코드: "0100111",
